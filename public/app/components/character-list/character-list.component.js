@@ -13,12 +13,14 @@ var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
 var CharacterListComponent = (function () {
     function CharacterListComponent(http) {
-        var _this = this;
         this.http = http;
+    }
+    CharacterListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.http.get('/api/characters')
             .map(function (response) { return response.json(); })
-            .subscribe(function (result) { return _this.characters = result; });
-    }
+            .subscribe(function (result) { return _this.characters = result; }, function (error) { return console.log(error); });
+    };
     CharacterListComponent = __decorate([
         core_1.Component({
             selector: 'character-list',

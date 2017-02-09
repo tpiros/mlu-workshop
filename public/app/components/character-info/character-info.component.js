@@ -14,13 +14,15 @@ var router_1 = require('@angular/router');
 require('rxjs/add/operator/switchMap');
 var CharacterInfoComponent = (function () {
     function CharacterInfoComponent(route, http) {
-        var _this = this;
         this.route = route;
         this.http = http;
+    }
+    CharacterInfoComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.http.get("/api/characters/" + params['id']); })
-            .subscribe(function (result) { return _this.character = result.json(); });
-    }
+            .subscribe(function (result) { return _this.character = result.json(); }, function (error) { return console.log(error); });
+    };
     CharacterInfoComponent = __decorate([
         core_1.Component({
             selector: 'character-info',
