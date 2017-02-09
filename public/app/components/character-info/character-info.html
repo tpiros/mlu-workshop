@@ -1,0 +1,8 @@
+<div *ngIf="character">
+  <h1>{{ character.content.name }} <small style="font-size: 12px;">{{ character.content.alliance}}</small></h1>
+  <p>{{ character.content.bio }}</p>
+  <p *ngIf="character.content.homeworld">Homeworld: {{ character.content.homeworld }}</p>
+  <p *ngIf="character.content.species">Species: {{ character.content.species }}</p>
+  <p *ngIf="character.content.weapon">Weapon: {{ character.content.weapon }}</p>
+  <img width="400" [src]="character.content.image" alt="{{ character.content.name }}">
+</div>
