@@ -1,8 +1,8 @@
 <h1>Character list</h1>
+<a [routerLink]="['/']">Main page</a>
 <ul>
   <li *ngFor="let character of characters">
     <a [routerLink]="[character.uri]">{{ character.content.name }}</a>
   </li>
 </ul>
 
-<!--<a [routerLink]="['/characters']">Characters</a>-->
