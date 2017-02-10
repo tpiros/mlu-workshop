@@ -5,17 +5,30 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'character-info',
-  templateUrl: '/app/components/character-info/character-info.html'
+  templateUrl: '/app/components/character-info/character-info.html',
+  styleUrls: ['./app/components/character-info/character-info.css']
 })
 
 export class CharacterInfoComponent implements OnInit {
+  subscription: any;
   character: Object;
-  
   constructor(private route: ActivatedRoute, private http: Http) { }
 
   ngOnInit() {
-    this.route.params
-    .switchMap(params => this.http.get(`/api/characters/${params['id']}`))
-    .subscribe(result => this.character = result.json(), error => console.log(error));
+
+    // this.route.params
+    // .map(params => params['id'])
+    // .subscribe(id => { 
+    //   this.http.get(`/api/characters/${id}`).subscribe(result => this.character = result.json());
+    // });
+
+    // this.route.params
+    // .switchMap(params => this.http.get(`/api/characters/${params['id']}`), 
+    // error => console.log(error));
+
+    this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
+    .subscribe(result => this.character = result.json());
+    
+
   }
 }

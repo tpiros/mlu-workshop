@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'character-list',
+  styleUrls: ['app/components/character-list/character-list.css'],
   templateUrl: '/app/components/character-list/character-list.html'
 })
 

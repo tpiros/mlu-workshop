@@ -24,6 +24,7 @@ var CharacterListComponent = (function () {
     CharacterListComponent = __decorate([
         core_1.Component({
             selector: 'character-list',
+            styleUrls: ['app/components/character-list/character-list.css'],
             templateUrl: '/app/components/character-list/character-list.html'
         }), 
         __metadata('design:paramtypes', [http_1.Http])

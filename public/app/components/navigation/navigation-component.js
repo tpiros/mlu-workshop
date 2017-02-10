@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ApplicationComponent = (function () {
-    function ApplicationComponent() {
+var NavigationComponent = (function () {
+    function NavigationComponent() {
     }
-    ApplicationComponent = __decorate([
+    NavigationComponent.prototype.ngOnInit = function () { };
+    NavigationComponent = __decorate([
         core_1.Component({
-            selector: 'star-wars',
-            styleUrls: ['/app/components/application/application.css'],
-            templateUrl: '/app/components/application/application.html'
+            selector: 'navigation',
+            styleUrls: ['app/components/navigation/navigation.css'],
+            templateUrl: '/app/components/navigation/navigation.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], ApplicationComponent);
-    return ApplicationComponent;
+    ], NavigationComponent);
+    return NavigationComponent;
 }());
-exports.ApplicationComponent = ApplicationComponent;
-//# sourceMappingURL=application.component.js.map
+exports.NavigationComponent = NavigationComponent;
+//# sourceMappingURL=navigation-component.js.map

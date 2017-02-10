@@ -1,8 +1,12 @@
-<div *ngIf="character">
-  <h1>{{ character.content.name }} <small style="font-size: 12px;">{{ character.content.alliance}}</small></h1>
-  <p>{{ character.content.bio }}</p>
-  <p *ngIf="character.content.homeworld">Homeworld: {{ character.content.homeworld }}</p>
-  <p *ngIf="character.content.species">Species: {{ character.content.species }}</p>
-  <p *ngIf="character.content.weapon">Weapon: {{ character.content.weapon }}</p>
-  <img width="400" [src]="character.content.image" alt="{{ character.content.name }}">
-</div>
+<md-card class="character-card" *ngIf="character">
+  <md-card-header>
+    <md-card-title>{{ character.content.name }} <small>({{ character.content.alliance }}}</small></md-card-title>
+    <md-card-subtitle>
+      <p><span *ngIf="character.content.homeworld"><strong>Born:</strong> {{ character.content.homeworld}}</span> <span *ngIf="character.content.weapon">| <strong>Weapon:</strong> {{ character.content.weapon }}</span></p>
+    </md-card-subtitle>
+  </md-card-header>
+  <img class="character-image" md-card-image [src]="character.content.image" alt="{{ character.content.name }}">
+  <md-card-content>
+    <p>{{ character.content.bio }}</p>
+  </md-card-content>
+</md-card>

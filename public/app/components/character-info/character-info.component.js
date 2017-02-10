@@ -18,15 +18,23 @@ var CharacterInfoComponent = (function () {
         this.http = http;
     }
     CharacterInfoComponent.prototype.ngOnInit = function () {
+        // this.route.params
+        // .map(params => params['id'])
+        // .subscribe(id => { 
+        //   this.http.get(`/api/characters/${id}`).subscribe(result => this.character = result.json());
+        // });
         var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.http.get("/api/characters/" + params['id']); })
-            .subscribe(function (result) { return _this.character = result.json(); }, function (error) { return console.log(error); });
+        // this.route.params
+        // .switchMap(params => this.http.get(`/api/characters/${params['id']}`), 
+        // error => console.log(error));
+        this.http.get("/api/characters/" + this.route.snapshot.params['id'])
+            .subscribe(function (result) { return _this.character = result.json(); });
     };
     CharacterInfoComponent = __decorate([
         core_1.Component({
             selector: 'character-info',
-            templateUrl: '/app/components/character-info/character-info.html'
+            templateUrl: '/app/components/character-info/character-info.html',
+            styleUrls: ['./app/components/character-info/character-info.css']
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, http_1.Http])
     ], CharacterInfoComponent);

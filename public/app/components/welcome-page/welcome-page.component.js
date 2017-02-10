@@ -15,6 +15,7 @@ var WelcomePageComponent = (function () {
     WelcomePageComponent = __decorate([
         core_1.Component({
             selector: 'welcome-page',
+            styleUrls: ['./app/components/welcome-page/welcome-page.css'],
             templateUrl: '/app/components/welcome-page/welcome-page.html'
         }), 
         __metadata('design:paramtypes', [])

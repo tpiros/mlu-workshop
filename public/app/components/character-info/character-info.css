@@ -1,0 +1,19 @@
+.character-card {
+  margin: 0;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.character-card img {
+  background-color: #eee;
+}
+
+md-card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+md-card-title small {
+  font-size: 12px;
+  font-weight: normal;
+}
