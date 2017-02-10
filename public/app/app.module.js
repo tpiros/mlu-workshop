@@ -17,6 +17,7 @@ var application_component_1 = require('./components/application/application.comp
 var character_list_component_1 = require('./components/character-list/character-list.component');
 var character_info_component_1 = require('./components/character-info/character-info.component');
 var welcome_page_component_1 = require('./components/welcome-page/welcome-page.component');
+var facet_component_1 = require('./components/facet/facet-component');
 var navigation_component_1 = require('./components/navigation/navigation-component');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
@@ -35,6 +36,7 @@ var AppModule = (function () {
                 character_list_component_1.CharacterListComponent,
                 character_info_component_1.CharacterInfoComponent,
                 welcome_page_component_1.WelcomePageComponent,
+                facet_component_1.FacetComponent,
                 navigation_component_1.NavigationComponent
             ],
             bootstrap: [

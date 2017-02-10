@@ -15,7 +15,7 @@ var NavigationComponent = (function () {
     NavigationComponent.prototype.ngOnInit = function () { };
     NavigationComponent = __decorate([
         core_1.Component({
-            selector: 'navigation',
+            selector: 'sw-navigation',
             styleUrls: ['app/components/navigation/navigation.css'],
             templateUrl: '/app/components/navigation/navigation.html'
         }), 

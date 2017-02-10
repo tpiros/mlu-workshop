@@ -7,8 +7,6 @@ html, body, div {
 	vertical-align: baseline;
 }
 
-md-card {
-  width: 400px;
-  margin: 65px auto;
+.mdl-layout-title {
+  margin-left: 170px;
 }
-

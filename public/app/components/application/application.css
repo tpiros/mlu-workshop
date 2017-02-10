@@ -1,6 +1,15 @@
-md-card {
-  max-width: 80%;
-  margin: 2em auto;
-  text-align: center;
+/*md-card {
+  width: 400px;
+  margin: 65px auto;
+}
+
+md-sidenav-container {
+  margin-top: 65px;
+  width: 200px;
   background-color: red;
+  position: absolute;
+}*/
+
+.page-content {
+  padding: 15px;
 }

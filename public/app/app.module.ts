@@ -8,6 +8,7 @@ import { ApplicationComponent } from './components/application/application.compo
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterInfoComponent } from './components/character-info/character-info.component';
 import { WelcomePageComponent } from  './components/welcome-page/welcome-page.component';
+import { FacetComponent } from './components/facet/facet-component';
 import { NavigationComponent } from  './components/navigation/navigation-component';
 
 import { routing } from './app.routing';
@@ -24,6 +25,7 @@ import { routing } from './app.routing';
     CharacterListComponent,
     CharacterInfoComponent,
     WelcomePageComponent,
+    FacetComponent,
     NavigationComponent
   ],
   bootstrap: [

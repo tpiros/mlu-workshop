@@ -15,7 +15,7 @@ var ApplicationComponent = (function () {
     ApplicationComponent = __decorate([
         core_1.Component({
             selector: 'star-wars',
-            styleUrls: ['/app/components/application/application.css'],
+            styleUrls: ['./app/components/application/application.css'],
             templateUrl: '/app/components/application/application.html'
         }), 
         __metadata('design:paramtypes', [])

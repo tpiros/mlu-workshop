@@ -1,6 +1,19 @@
-<md-toolbar>
-  <a md-raised-button [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']" [routerLink]="['/']"><md-icon class="material-icons red">home</md-icon> Home</a>
-  <a md-raised-button [routerLinkActive]="['active']" [routerLink]="['/characters']">List of Characters <md-icon class="star-wars-icon"></md-icon></a>
-</md-toolbar>
+<!--<md-toolbar>
+  
+</md-toolbar>-->
 
-
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title">MLU <md-icon class="material-icons red">favorite</md-icon> Star Wars</span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation. We hide it in small screens. -->
+    <nav class="mdl-navigation mdl-layout--large-screen-only">
+      <!--<a class="mdl-navigation__link" md-raised-button [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']" [routerLink]="['/']"><md-icon class="material-icons red">home</md-icon> Home</a>
+      <a class="mdl-navigation__link" md-raised-button [routerLinkActive]="['active']" [routerLink]="['/characters']">List of Characters <md-icon class="star-wars-icon"></md-icon></a>-->
+      <a class="mdl-navigation__link" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']" [routerLink]="['/']"><md-icon class="material-icons">home</md-icon> Home</a>
+      <a class="mdl-navigation__link" [routerLinkActive]="['active']" [routerLink]="['/characters']"><md-icon class="star-wars-icon"></md-icon> List of Characters</a>
+    </nav>
+  </div>
+</header>
