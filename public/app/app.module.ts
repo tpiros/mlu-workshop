@@ -2,9 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import 'hammerjs';
-
+import { FormsModule } from '@angular/forms';
 // Components
 import { ApplicationComponent } from './components/application/application.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
@@ -12,6 +10,7 @@ import { CharacterInfoComponent } from './components/character-info/character-in
 import { WelcomePageComponent } from  './components/welcome-page/welcome-page.component';
 import { FacetComponent } from './components/facet/facet-component';
 import { NavigationComponent } from  './components/navigation/navigation.component';
+import { SearchComponent } from './components/search/search.component';
 
 // Pipes
 import { TrimPipe } from './pipes/text-trim/text-trim.pipe'
@@ -19,12 +18,15 @@ import { TrimPipe } from './pipes/text-trim/text-trim.pipe'
 // Routing
 import { routing } from './app.routing';
 
+import { TypeaheadModule } from 'ng2-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     routing,
-    MaterialModule.forRoot()
+    FormsModule,
+    TypeaheadModule.forRoot()
   ],
   declarations: [
     ApplicationComponent,
@@ -33,7 +35,8 @@ import { routing } from './app.routing';
     WelcomePageComponent,
     FacetComponent,
     NavigationComponent,
-    TrimPipe
+    TrimPipe,
+    SearchComponent
   ],
   bootstrap: [
     ApplicationComponent

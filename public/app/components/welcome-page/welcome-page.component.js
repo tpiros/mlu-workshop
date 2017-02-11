@@ -9,12 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+require('rxjs/add/observable/of');
 var WelcomePageComponent = (function () {
     function WelcomePageComponent() {
+        this.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas',
+            'California', 'Colorado',
+            'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
+            'Illinois', 'Indiana', 'Iowa',
+            'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts',
+            'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico',
+            'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon',
+            'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington',
+            'West Virginia', 'Wisconsin', 'Wyoming'];
     }
     WelcomePageComponent = __decorate([
         core_1.Component({
-            selector: 'welcome-page',
+            // selector: 'welcome-page',
             styleUrls: ['./app/components/welcome-page/welcome-page.css'],
             templateUrl: '/app/components/welcome-page/welcome-page.html'
         }), 

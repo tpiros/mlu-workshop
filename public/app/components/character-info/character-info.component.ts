@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'character-info',
+  // selector: 'character-info',
   templateUrl: '/app/components/character-info/character-info.html',
   styleUrls: ['./app/components/character-info/character-info.css']
 })

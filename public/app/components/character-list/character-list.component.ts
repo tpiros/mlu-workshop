@@ -17,11 +17,8 @@ export class CharacterListComponent implements OnInit {
   constructor(private http: Http, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
-
     this.route.queryParams
     .map(params => {
-      console.log(params['homeworld']);
       return params['homeworld']
     })
     .subscribe(homeworld => { 
@@ -35,18 +32,5 @@ export class CharacterListComponent implements OnInit {
                         .subscribe(result => this.characters = result.characters);
       }
     });
-  }
-
-  //   this.route.queryParams
-  //   .switchMap(params => {
-  //     let url: string;
-  //     let param: string = params['homeworld'];
-  //     if (param) {
-  //       url = `/api/characters?homeworld=${param}`;
-  //     } else {
-  //       url = '/api/characters'
-  //     }
-  //     return this.http.get(url);
-  //   }, error => console.log(error));
-  // }
+  };
 }

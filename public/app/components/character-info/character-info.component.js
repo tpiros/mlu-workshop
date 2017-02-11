@@ -33,7 +33,7 @@ var CharacterInfoComponent = (function () {
     };
     CharacterInfoComponent = __decorate([
         core_1.Component({
-            selector: 'character-info',
+            // selector: 'character-info',
             templateUrl: '/app/components/character-info/character-info.html',
             styleUrls: ['./app/components/character-info/character-info.css']
         }), 

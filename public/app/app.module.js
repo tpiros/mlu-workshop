@@ -12,8 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
-var material_1 = require('@angular/material');
-require('hammerjs');
+var forms_1 = require('@angular/forms');
 // Components
 var application_component_1 = require('./components/application/application.component');
 var character_list_component_1 = require('./components/character-list/character-list.component');
@@ -21,10 +20,12 @@ var character_info_component_1 = require('./components/character-info/character-
 var welcome_page_component_1 = require('./components/welcome-page/welcome-page.component');
 var facet_component_1 = require('./components/facet/facet-component');
 var navigation_component_1 = require('./components/navigation/navigation.component');
+var search_component_1 = require('./components/search/search.component');
 // Pipes
 var text_trim_pipe_1 = require('./pipes/text-trim/text-trim.pipe');
 // Routing
 var app_routing_1 = require('./app.routing');
+var ng2_bootstrap_1 = require('ng2-bootstrap');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,8 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
                 app_routing_1.routing,
-                material_1.MaterialModule.forRoot()
+                forms_1.FormsModule,
+                ng2_bootstrap_1.TypeaheadModule.forRoot()
             ],
             declarations: [
                 application_component_1.ApplicationComponent,
@@ -43,7 +45,8 @@ var AppModule = (function () {
                 welcome_page_component_1.WelcomePageComponent,
                 facet_component_1.FacetComponent,
                 navigation_component_1.NavigationComponent,
-                text_trim_pipe_1.TrimPipe
+                text_trim_pipe_1.TrimPipe,
+                search_component_1.SearchComponent
             ],
             bootstrap: [
                 application_component_1.ApplicationComponent

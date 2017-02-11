@@ -1,25 +1,14 @@
-<!--<navigation></navigation>
-<md-sidenav-container>
-  <md-sidenav>HAHAHAHAH</md-sidenav>
-</md-sidenav-container>
-<md-card>
-  <router-outlet></router-outlet>
-</md-card>-->
-<!--<sw-navigation><sw-navigation>
-<main class="mdl-layout__content">
-  <div class="page-content">
-    
-  </div>
-</main> 
-</div>-->
-
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-            mdl-layout--fixed-header">
-  <sw-navigation></sw-navigation>
-  <div class="mdl-layout__drawer" sw-facet></div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
+<sw-navigation></sw-navigation>
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-12 col-md-9">
+      <p class="float-right hidden-md-up">
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+      </p>
       <router-outlet></router-outlet>
     </div>
-  </main>
+    <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+      <sw-facet></sw-facet>
+    </div>
+  </div>
 </div>

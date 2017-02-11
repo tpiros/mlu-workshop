@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Component({
-  selector: '[sw-facet]',
+  selector: 'sw-facet',
   styleUrls: ['./app/components/facet/facet.css'],
   templateUrl: '/app/components/facet/facet.html'
 })

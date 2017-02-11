@@ -22,7 +22,6 @@ var CharacterListComponent = (function () {
         var _this = this;
         this.route.queryParams
             .map(function (params) {
-            console.log(params['homeworld']);
             return params['homeworld'];
         })
             .subscribe(function (homeworld) {
@@ -38,6 +37,7 @@ var CharacterListComponent = (function () {
             }
         });
     };
+    ;
     CharacterListComponent = __decorate([
         core_1.Component({
             selector: 'character-list',

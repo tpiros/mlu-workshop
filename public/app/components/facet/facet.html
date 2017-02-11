@@ -1,34 +1,7 @@
-<span class="mdl-layout-title facetTitle">Homeworld</span>
-<div class="demo-list-action mdl-list">
-  <div class="mdl-list__item hover" *ngFor="let facet of facets">
-    <span class="mdl-list__item-primary-content">
-      <a class="mdl-navigation__link" [routerLink]="['/characters']" [queryParams]="{homeworld: facet.name}">{{ facet.name }}</a>
-    </span>
-    <a class="mdl-list__item-secondary-action" href="#"><span class="mdl-badge" [attr.data-badge]="facet.count"></span></a>
-  </div>
-</div>
-
-
-<!--
-<!--<nav class="mdl-navigation">
-  <ul class="no-bullets">
-    <li class="mdl-list__item facet" *ngFor="let facet of facets">
-      
-        
-      </span>
-    </li>
-    <span class="mdl-list__item-secondary-content">
-      <md-icon class="rebel"></md-icon>
-    </span>
-  </ul>-->
-<!--</nav>-->
-
-<!--<
-
-<span class="mdl-layout-title facet">Species</span>
-<nav class="mdl-navigation">
-  <a class="mdl-navigation__link" href="">Link</a>
-  <a class="mdl-navigation__link" href="">Link</a>
-  <a class="mdl-navigation__link" href="">Link</a>
-  <a class="mdl-navigation__link" href="">Link</a>
-</nav>-->
+<ul class="list-group">
+  <h4 class="list-group-item-heading">Homeworld</h4>
+  <li class="list-group-item justify-content-between" *ngFor="let facet of facets">
+    <a [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']" [routerLink]="['/characters']" [queryParams]="{homeworld: facet.name}">{{ facet.name }} </a>
+    <span class="spaced badge badge-pill badge-danger">{{ facet.count }}</span>
+  </li>
+</ul>

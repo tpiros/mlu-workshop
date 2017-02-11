@@ -1,17 +1,16 @@
-<ul class="character-list mdl-list">
-  <li class="mdl-list__item mdl-list__item--three-line" *ngFor="let character of characters">
-    <span class="mdl-list__item-primary-content">
-      <md-icon *ngIf="character.content.gender?.toLowerCase() === 'male'" class="male"></md-icon>
-      <md-icon *ngIf="character.content.gender?.toLowerCase() === 'female'" class="female"></md-icon>
-      <md-icon *ngIf="character.content.gender?.toLowerCase() !== 'female' && character.content.gender?.toLowerCase() !== 'male'" class="droid"></md-icon>
-      <span><a [routerLink]="[character.uri]">{{ character.content.name }}</a></span>
-      <span class="mdl-list__item-text-body">
-        {{ character.content.bio | trim: 50 }}
-      </span>
-    </span>
-    <span class="mdl-list__item-secondary-content">
-      <md-icon *ngIf="character.content.alliance.toLowerCase() === 'rebel alliance' || character.content.alliance.toLowerCase() === 'resistance'" class="rebel"></md-icon>
-      <md-icon *ngIf="character.content.alliance.toLowerCase() === 'galactic empire' || character.content.alliance.toLowerCase() === 'the first order'" class="empire"></md-icon>
-    </span>
-  </li>
-</ul>
+<div class="list-group">
+  <a [routerLink]="[character.uri]" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let character of characters">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ character.content.name }}</h5>
+    </div>
+    <p class="mb-1">{{ character.content.bio | trim: 50 }}</p>
+    <small class="text-muted">
+      <div [ngClass]="{male: character.content.gender?.toLowerCase() === 'male'}"></div>
+      <div [ngClass]="{female: character.content.gender?.toLowerCase() === 'female'}"></div>
+      <div [ngClass]="{droid: character.content.gender?.toLowerCase() !== 'male' && character.content.gender?.toLowerCase() !== 'female'}"></div>
+      <div [ngClass]="{rebel: character.content.alliance.toLowerCase() === 'rebel alliance' || character.content.alliance.toLowerCase() === 'resistance'}"></div>
+      <div [ngClass]="{empire: character.content.alliance.toLowerCase() === 'galactic empire' || character.content.alliance.toLowerCase() === 'the first order'}"></div>
+      <div></div>
+    </small>
+  </a>
+</div>

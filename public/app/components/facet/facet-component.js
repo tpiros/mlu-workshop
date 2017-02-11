@@ -22,7 +22,7 @@ var FacetComponent = (function () {
     };
     FacetComponent = __decorate([
         core_1.Component({
-            selector: '[sw-facet]',
+            selector: 'sw-facet',
             styleUrls: ['./app/components/facet/facet.css'],
             templateUrl: '/app/components/facet/facet.html'
         }), 
