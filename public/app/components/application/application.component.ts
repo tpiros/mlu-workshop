@@ -5,9 +5,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app/components/application/application.css'],
   templateUrl: '/app/components/application/application.html'
 })
-export class ApplicationComponent {
-  
-  // open() {
-  //   this.sideNav.open();
-  // }
-}
+export class ApplicationComponent { }

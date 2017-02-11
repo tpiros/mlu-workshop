@@ -4,23 +4,74 @@ const db = marklogic.createDatabaseClient(settings);
 const qb = marklogic.queryBuilder;
 
 const displayCharacters = (req, res) => {
+  let result = [];
   db.documents.query(
     qb.where(
       qb.collection('characters')
     )
-    .orderBy(qb.sort('name', 'ascending'))
+    .calculate(qb.facet('homeworld', qb.facetOptions('frequency-order', 'descending')))
+    .withOptions({ categories: 'none' })
     .slice(0, 30)
   ).result()
-  .then(characters => res.json(characters))
+  .then(characters => {
+    const facets = characters[0].facets.homeworld.facetValues
+    result = facets.map(facet => (
+      { 
+        name: facet.name,
+        count: facet.count
+      }
+    ));
+    return facets;
+  })
+  .then((facets) => {
+    let result = {};
+    let homeworld;
+    let query;
+    if (req.query.homeworld) {
+      homeworld = req.query.homeworld;
+    }
+    if (homeworld) {
+      query = db.documents.query(
+        qb.where(
+          qb.collection('characters'),
+          qb.parsedFrom(`homeworld:"${decodeURI(homeworld)}"`,
+            qb.parseBindings(
+              qb.value('homeworld', qb.bind('homeworld'))
+            )
+          )
+        )
+        .orderBy(qb.sort('name', 'ascending'))
+        .slice(0, 30)
+      ).result();
+    } else {
+      query = db.documents.query(
+        qb.where(
+          qb.collection('characters')
+        )
+        .orderBy(qb.sort('name', 'ascending'))
+        .slice(0, 30)
+      ).result();
+    }
+
+    query.then(characters => {
+      let result = {
+        characters,
+        facets
+      };
+      res.json(result);
+    });
+  })
   .catch(error => console.log(error));
 };
 
 const displayOneCharacter = (req, res) => {
   const uri = `/characters/${req.params.id}`;
   db.documents.read(uri).result()
-  .then(character => res.json(character[0]))
+  .then(character => {
+    return res.json(character[0])
+  })
   .catch(error => console.log(error));
-}
+};
 
 module.exports = {
   displayCharacters,

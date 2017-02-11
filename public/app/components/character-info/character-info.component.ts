@@ -27,8 +27,8 @@ export class CharacterInfoComponent implements OnInit {
     // error => console.log(error));
 
     this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
-    .subscribe(result => this.character = result.json());
+    .map(response => response.json())
+    .subscribe(result => this.character = result, error => console.log(error));
     
-
   }
 }

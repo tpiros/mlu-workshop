@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var NavigationComponent = (function () {
-    function NavigationComponent() {
+var TrimPipe = (function () {
+    function TrimPipe() {
     }
-    NavigationComponent.prototype.ngOnInit = function () { };
-    NavigationComponent = __decorate([
-        core_1.Component({
-            selector: 'sw-navigation',
-            styleUrls: ['app/components/navigation/navigation.css'],
-            templateUrl: '/app/components/navigation/navigation.html'
-        }), 
+    TrimPipe.prototype.transform = function (text, numberOfChars) {
+        if (numberOfChars === void 0) { numberOfChars = 25; }
+        return text.split('').slice(0, numberOfChars).join('') + " ...";
+    };
+    TrimPipe = __decorate([
+        core_1.Pipe({ name: 'trim' }), 
         __metadata('design:paramtypes', [])
-    ], NavigationComponent);
-    return NavigationComponent;
+    ], TrimPipe);
+    return TrimPipe;
 }());
-exports.NavigationComponent = NavigationComponent;
-//# sourceMappingURL=navigation-component.js.map
+exports.TrimPipe = TrimPipe;
+//# sourceMappingURL=text-trim.pipe.js.map

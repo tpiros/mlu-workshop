@@ -1,0 +1,16 @@
+.facetTitle {
+  padding-left: 5px;
+  margin: 0px;
+  font-size: 16px;
+}
+.mdl-list__item {
+  padding: 5px 5px 5px 10px;
+}
+
+.hover:hover {
+  background-color: #eee;
+}
+
+.mdl-badge[data-badge]:after {
+  position: static;
+}

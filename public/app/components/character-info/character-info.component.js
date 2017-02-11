@@ -28,7 +28,8 @@ var CharacterInfoComponent = (function () {
         // .switchMap(params => this.http.get(`/api/characters/${params['id']}`), 
         // error => console.log(error));
         this.http.get("/api/characters/" + this.route.snapshot.params['id'])
-            .subscribe(function (result) { return _this.character = result.json(); });
+            .map(function (response) { return response.json(); })
+            .subscribe(function (result) { return _this.character = result; }, function (error) { return console.log(error); });
     };
     CharacterInfoComponent = __decorate([
         core_1.Component({

@@ -1,29 +1,4 @@
-/*md-toolbar {
-  background: #eee;
-  height: 56px;
-  min-height: 56px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
-  z-index: 5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: auto;
-}
-
-a[md-raised-button] {
-  margin: 0 auto;
-}
-
-[md-raised-button] {
-  background: #fff;
-  margin-right: 10px;
-  margin-left: 10px;
-  /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
-}*/
-
 .active {
-  /*color: blue;*/
   background-color: #4a3fb5;
 }
 

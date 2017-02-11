@@ -1,23 +1,12 @@
-<!--<md-list>
-  <md-list-item *ngFor="let character of characters">
-      <a md-line md-button [routerLink]="[character.uri]">
-        {{ character.content.name }}
-        
-        
-        
-      </a>
-  </md-list-item>
-</md-list>-->
-
-<ul class="demo-list-three mdl-list">
+<ul class="character-list mdl-list">
   <li class="mdl-list__item mdl-list__item--three-line" *ngFor="let character of characters">
     <span class="mdl-list__item-primary-content">
       <md-icon *ngIf="character.content.gender?.toLowerCase() === 'male'" class="male"></md-icon>
       <md-icon *ngIf="character.content.gender?.toLowerCase() === 'female'" class="female"></md-icon>
       <md-icon *ngIf="character.content.gender?.toLowerCase() !== 'female' && character.content.gender?.toLowerCase() !== 'male'" class="droid"></md-icon>
-      <span><a md-button [routerLink]="[character.uri]">{{ character.content.name }}</a></span>
+      <span><a [routerLink]="[character.uri]">{{ character.content.name }}</a></span>
       <span class="mdl-list__item-text-body">
-        {{ character.content.bio }}
+        {{ character.content.bio | trim: 50 }}
       </span>
     </span>
     <span class="mdl-list__item-secondary-content">

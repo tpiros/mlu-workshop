@@ -10,16 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var router_1 = require('@angular/router');
 require('rxjs/add/operator/map');
+require('rxjs/add/operator/switchMap');
 var CharacterListComponent = (function () {
-    function CharacterListComponent(http) {
+    function CharacterListComponent(http, route) {
         this.http = http;
+        this.route = route;
     }
     CharacterListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/characters')
-            .map(function (response) { return response.json(); })
-            .subscribe(function (result) { return _this.characters = result; }, function (error) { return console.log(error); });
+        this.route.queryParams
+            .map(function (params) {
+            console.log(params['homeworld']);
+            return params['homeworld'];
+        })
+            .subscribe(function (homeworld) {
+            if (homeworld) {
+                return _this.http.get("/api/characters?homeworld=" + homeworld)
+                    .map(function (response) { return response.json(); })
+                    .subscribe(function (result) { return _this.characters = result.characters; });
+            }
+            else {
+                return _this.http.get('/api/characters')
+                    .map(function (response) { return response.json(); })
+                    .subscribe(function (result) { return _this.characters = result.characters; });
+            }
+        });
     };
     CharacterListComponent = __decorate([
         core_1.Component({
@@ -27,7 +44,7 @@ var CharacterListComponent = (function () {
             styleUrls: ['app/components/character-list/character-list.css'],
             templateUrl: '/app/components/character-list/character-list.html'
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, router_1.ActivatedRoute])
     ], CharacterListComponent);
     return CharacterListComponent;
 }());

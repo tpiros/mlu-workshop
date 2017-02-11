@@ -1,7 +1,34 @@
-<span class="mdl-layout-title"></span>
+<span class="mdl-layout-title facetTitle">Homeworld</span>
+<div class="demo-list-action mdl-list">
+  <div class="mdl-list__item hover" *ngFor="let facet of facets">
+    <span class="mdl-list__item-primary-content">
+      <a class="mdl-navigation__link" [routerLink]="['/characters']" [queryParams]="{homeworld: facet.name}">{{ facet.name }}</a>
+    </span>
+    <a class="mdl-list__item-secondary-action" href="#"><span class="mdl-badge" [attr.data-badge]="facet.count"></span></a>
+  </div>
+</div>
+
+
+<!--
+<!--<nav class="mdl-navigation">
+  <ul class="no-bullets">
+    <li class="mdl-list__item facet" *ngFor="let facet of facets">
+      
+        
+      </span>
+    </li>
+    <span class="mdl-list__item-secondary-content">
+      <md-icon class="rebel"></md-icon>
+    </span>
+  </ul>-->
+<!--</nav>-->
+
+<!--<
+
+<span class="mdl-layout-title facet">Species</span>
 <nav class="mdl-navigation">
-  <a class="mdl-navigation__link" href="">facet1</a>
-  <a class="mdl-navigation__link" href="">facet2</a>
-  <a class="mdl-navigation__link" href="">facet3</a>
-  <a class="mdl-navigation__link" href="">facet4</a>
-</nav>
+  <a class="mdl-navigation__link" href="">Link</a>
+  <a class="mdl-navigation__link" href="">Link</a>
+  <a class="mdl-navigation__link" href="">Link</a>
+  <a class="mdl-navigation__link" href="">Link</a>
+</nav>-->

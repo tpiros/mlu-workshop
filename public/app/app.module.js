@@ -8,17 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// Core
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var material_1 = require('@angular/material');
 require('hammerjs');
+// Components
 var application_component_1 = require('./components/application/application.component');
 var character_list_component_1 = require('./components/character-list/character-list.component');
 var character_info_component_1 = require('./components/character-info/character-info.component');
 var welcome_page_component_1 = require('./components/welcome-page/welcome-page.component');
 var facet_component_1 = require('./components/facet/facet-component');
-var navigation_component_1 = require('./components/navigation/navigation-component');
+var navigation_component_1 = require('./components/navigation/navigation.component');
+// Pipes
+var text_trim_pipe_1 = require('./pipes/text-trim/text-trim.pipe');
+// Routing
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -37,7 +42,8 @@ var AppModule = (function () {
                 character_info_component_1.CharacterInfoComponent,
                 welcome_page_component_1.WelcomePageComponent,
                 facet_component_1.FacetComponent,
-                navigation_component_1.NavigationComponent
+                navigation_component_1.NavigationComponent,
+                text_trim_pipe_1.TrimPipe
             ],
             bootstrap: [
                 application_component_1.ApplicationComponent
