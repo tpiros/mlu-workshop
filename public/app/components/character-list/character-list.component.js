@@ -21,21 +21,8 @@ var CharacterListComponent = (function () {
     CharacterListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.queryParams
-            .map(function (params) {
-            return params['homeworld'];
-        })
-            .subscribe(function (homeworld) {
-            if (homeworld) {
-                return _this.http.get("/api/characters?homeworld=" + homeworld)
-                    .map(function (response) { return response.json(); })
-                    .subscribe(function (result) { return _this.characters = result.characters; });
-            }
-            else {
-                return _this.http.get('/api/characters')
-                    .map(function (response) { return response.json(); })
-                    .subscribe(function (result) { return _this.characters = result.characters; });
-            }
-        });
+            .map(function (params) { return params['homeworld']; })
+            .subscribe(function (homeworld) { return homeworld !== undefined ? _this.http.get("/api/characters?homeworld=" + homeworld).map(function (response) { return response.json(); }).subscribe(function (result) { return _this.characters = result.characters; }) : _this.http.get('/api/characters').map(function (response) { return response.json(); }).subscribe(function (result) { return _this.characters = result.characters; }); });
     };
     ;
     CharacterListComponent = __decorate([

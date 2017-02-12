@@ -18,19 +18,7 @@ export class CharacterListComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams
-    .map(params => {
-      return params['homeworld']
-    })
-    .subscribe(homeworld => { 
-      if (homeworld) {
-        return this.http.get(`/api/characters?homeworld=${homeworld}`)
-                        .map(response => response.json())
-                        .subscribe(result => this.characters = result.characters);
-      } else {
-        return this.http.get('/api/characters')
-                        .map(response => response.json())
-                        .subscribe(result => this.characters = result.characters);
-      }
-    });
+    .map(params => params['homeworld'])
+    .subscribe(homeworld => homeworld !== undefined ? this.http.get(`/api/characters?homeworld=${homeworld}`).map(response => response.json()).subscribe(result => this.characters = result.characters) : this.http.get('/api/characters').map(response => response.json()).subscribe(result => this.characters = result.characters));
   };
 }
