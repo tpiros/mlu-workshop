@@ -33,7 +33,7 @@ To start the application please execute `npm start`.
 (If, for whatever reason you'd like to start your application using `node app.js` make sure that you run `tsc` first to compile the TypeScript code as well.)
 
 ### Start the application in "development mode"
-**Important: in order to start the application in "development mode" you need to have [nodemon](https://www.npmjs.com/package/nodemon) installed globally. You can do this by execuging `npm i -g nodemon` from your cli.**
+**Important: in order to start the application in "development mode" you need to have [nodemon](https://www.npmjs.com/package/nodemon) installed globally. You can do this by executing `npm i -g nodemon` from your cli.**
 
 To start the application in "development mode" you can execute `npm run startDev`. This will fire up both `nodemon` and `tsc -w` using the [concurrently](https://www.npmjs.com/package/concurrently) package. In this mode, code modifications to both Node.js and to Angular2 will automatically either resart the Node.js process and/or recompile the TypeScript code. (The changes will be visible once you have refreshed your browser.)
 
