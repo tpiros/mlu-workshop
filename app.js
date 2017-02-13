@@ -17,6 +17,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/api', apiRouter);
 apiRouter.route('/characters').get(apiRoutes.displayCharacters);
 apiRouter.route('/characters/:id').get(apiRoutes.displayOneCharacter);
+// apiRouter.route('/suggestions').get(apiRoutes.suggestions);
 
 app.use('/', appRouter);
 appRouter.route('/image/:id').get(appRoutes.displayImage);

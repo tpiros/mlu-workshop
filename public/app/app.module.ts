@@ -18,15 +18,12 @@ import { TrimPipe } from './pipes/text-trim/text-trim.pipe'
 // Routing
 import { routing } from './app.routing';
 
-import { TypeaheadModule } from 'ng2-bootstrap';
-
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     routing,
-    FormsModule,
-    TypeaheadModule.forRoot()
+    FormsModule
   ],
   declarations: [
     ApplicationComponent,

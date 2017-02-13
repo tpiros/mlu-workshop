@@ -11,27 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var SearchComponent = (function () {
     function SearchComponent() {
-        this.fruits = [
-            {
-                id: 1,
-                name: "Apple",
-                searchText: "apple"
-            },
-            {
-                id: 2,
-                name: "Orange",
-                searchText: "orange"
-            },
-            {
-                id: 3,
-                name: "Banana",
-                searchText: "banana"
-            }
-        ];
     }
-    SearchComponent.prototype.fruitSelected = function (fruit) {
-        this.fruitName = fruit ? fruit.name : 'none';
-    };
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'sw-search',

@@ -12,6 +12,11 @@ var core_1 = require('@angular/core');
 var ApplicationComponent = (function () {
     function ApplicationComponent() {
     }
+    ApplicationComponent.prototype.ngAfterViewInit = function () {
+        $('#offcanvas').click(function () {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    };
     ApplicationComponent = __decorate([
         core_1.Component({
             selector: 'star-wars',

@@ -14,9 +14,7 @@
       '@angular/router':                   'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms':                    'npm:@angular/forms/bundles/forms.umd.js',
       'rxjs':                              'npm:rxjs',
-      'angular-in-memory-web-api':         'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'moment':                            'npm:moment/moment.js',
-      'ng2-bootstrap':                     'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
+      'angular-in-memory-web-api':         'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     },
     packages: {
       app: {

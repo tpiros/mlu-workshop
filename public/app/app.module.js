@@ -25,7 +25,6 @@ var search_component_1 = require('./components/search/search.component');
 var text_trim_pipe_1 = require('./pipes/text-trim/text-trim.pipe');
 // Routing
 var app_routing_1 = require('./app.routing');
-var ng2_bootstrap_1 = require('ng2-bootstrap');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,8 +34,7 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
                 app_routing_1.routing,
-                forms_1.FormsModule,
-                ng2_bootstrap_1.TypeaheadModule.forRoot()
+                forms_1.FormsModule
             ],
             declarations: [
                 application_component_1.ApplicationComponent,

@@ -73,7 +73,39 @@ const displayOneCharacter = (req, res) => {
   .catch(error => console.log(error));
 };
 
+// const suggestions = (req, res) => {
+//   if (req.query.term) {
+//     const term = req.query.term;
+//     db.documents.suggest(term,
+//       qb.where(
+//         qb.collection('characters'),
+//         qb.parsedFrom('',
+//           qb.parseBindings(
+//             qb.range('name', qb.bindDefault())
+//           )
+//         )
+//       )
+//       .slice(0, 30)
+//     ).result().then(data => {
+//       console.log(data);
+//       if (data.length !== 0) {
+//         // let result = [];
+//         // result = data.map(item => {
+//         //   item = item.substring(item.indexOf('"') + 1);
+//         //   return item.replace(/"/g, "")
+//         // });
+//         // console.log(result);
+//         // return res.json(result);
+//         return res.json(data);
+//       } else {
+//         res.json([]);
+//       }
+//     });
+//   }
+// };
+
 module.exports = {
   displayCharacters,
   displayOneCharacter
+  // suggestions
 };
