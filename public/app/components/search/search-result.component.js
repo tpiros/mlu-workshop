@@ -18,9 +18,8 @@ var SearchResultComponent = (function () {
         var _this = this;
         this.searchService.currentSearch.subscribe(function (results) {
             _this.query = _this.searchService.query;
-            console.log(_this.query);
             if (results.length === 0) {
-                return;
+                _this.results = [];
             }
             else {
                 return _this.results = results;

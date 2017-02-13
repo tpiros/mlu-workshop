@@ -15,7 +15,7 @@ export class SearchResultComponent implements OnChanges {
     this.searchService.currentSearch.subscribe(results => {
       this.query = this.searchService.query;
       if (results.length === 0) {
-        return;
+        this.results = [];
       } else {
         return this.results = results;
       }
