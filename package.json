@@ -15,6 +15,7 @@
     "@angular/router": "~3.4.0",
     "@types/jquery": "^2.0.40",
     "angular-in-memory-web-api": "~0.2.4",
+    "bluebird": "^3.4.7",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
     "express": "^4.14.1",
