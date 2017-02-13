@@ -14,7 +14,6 @@ export class SearchResultComponent implements OnChanges {
   ngOnChanges() {
     this.searchService.currentSearch.subscribe(results => {
       this.query = this.searchService.query;
-      console.log(this.query);
       if (results.length === 0) {
         return;
       } else {
