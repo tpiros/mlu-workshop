@@ -8,6 +8,9 @@ declare var $:JQueryStatic;
 })
 
 export class ApplicationComponent implements AfterViewInit {
+  results: Array<string> = [];
+  
+  
   ngAfterViewInit() {
     $('#offcanvas').click(function () {
       $('.row-offcanvas').toggleClass('active');

@@ -15,20 +15,14 @@ export class CharacterInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: Http) { }
 
   ngOnInit() {
+    // this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
+    // .map(response => response.json())
+    // .subscribe(result => this.character = result, error => console.log(error));
 
-    // this.route.params
-    // .map(params => params['id'])
-    // .subscribe(id => { 
-    //   this.http.get(`/api/characters/${id}`).subscribe(result => this.character = result.json());
-    // });
-
-    // this.route.params
-    // .switchMap(params => this.http.get(`/api/characters/${params['id']}`), 
-    // error => console.log(error));
-
-    this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
-    .map(response => response.json())
-    .subscribe(result => this.character = result, error => console.log(error));
-    
+    this.route.params.subscribe(params => {
+      return this.http.get(`/api/characters/${params['id']}`)
+      .map(response => response.json())
+      .subscribe(result => this.character = result, error => console.log(error));
+    });
   }
 }

@@ -73,6 +73,18 @@ const displayOneCharacter = (req, res) => {
   .catch(error => console.log(error));
 };
 
+const search = (req, res) => {
+  if (req.query.term) {
+    const term = req.query.term;
+    db.documents.query(
+      qb.where(
+        qb.collection('characters'),
+        qb.parsedFrom(term)
+      ).slice(0, 30)
+    ).result().then(response => res.json(response));
+  }
+}
+
 // const suggestions = (req, res) => {
 //   if (req.query.term) {
 //     const term = req.query.term;
@@ -106,6 +118,7 @@ const displayOneCharacter = (req, res) => {
 
 module.exports = {
   displayCharacters,
-  displayOneCharacter
+  displayOneCharacter,
+  search
   // suggestions
 };

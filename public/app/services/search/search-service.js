@@ -9,25 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var search_service_1 = require('./../../services/search/search-service');
+var http_1 = require('@angular/http');
+var ReplaySubject_1 = require('rxjs/ReplaySubject');
 require('rxjs/add/operator/map');
-var SearchComponent = (function () {
-    function SearchComponent(searchService) {
-        this.searchService = searchService;
+var SearchService = (function () {
+    function SearchService(http) {
+        this.http = http;
+        this.currentSearch = new ReplaySubject_1.ReplaySubject(1);
+        this.params = new http_1.URLSearchParams();
     }
-    SearchComponent.prototype.search = function () {
+    SearchService.prototype.search = function (term) {
         var _this = this;
-        this.searchService.search(this.term).subscribe(function (response) { return _this.searchService.results = response; });
+        this.query = term;
+        this.params.set('term', term);
+        return this.http.get('/api/search', { search: this.params }).map(function (response) {
+            _this.currentSearch.next(response.json());
+            return _this.currentSearch;
+        });
     };
-    SearchComponent = __decorate([
-        core_1.Component({
-            selector: 'sw-search',
-            styleUrls: ['./app/components/search/search.css'],
-            templateUrl: '/app/components/search/search.html'
-        }), 
-        __metadata('design:paramtypes', [search_service_1.SearchService])
-    ], SearchComponent);
-    return SearchComponent;
+    SearchService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], SearchService);
+    return SearchService;
 }());
-exports.SearchComponent = SearchComponent;
-//# sourceMappingURL=search.component.js.map
+exports.SearchService = SearchService;
+//# sourceMappingURL=search-service.js.map

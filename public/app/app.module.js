@@ -21,8 +21,11 @@ var welcome_page_component_1 = require('./components/welcome-page/welcome-page.c
 var facet_component_1 = require('./components/facet/facet-component');
 var navigation_component_1 = require('./components/navigation/navigation.component');
 var search_component_1 = require('./components/search/search.component');
+var search_result_component_1 = require('./components/search/search-result.component');
 // Pipes
 var text_trim_pipe_1 = require('./pipes/text-trim/text-trim.pipe');
+// Services
+var search_service_1 = require('./services/search/search-service');
 // Routing
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
@@ -44,7 +47,11 @@ var AppModule = (function () {
                 facet_component_1.FacetComponent,
                 navigation_component_1.NavigationComponent,
                 text_trim_pipe_1.TrimPipe,
-                search_component_1.SearchComponent
+                search_component_1.SearchComponent,
+                search_result_component_1.SearchResultComponent
+            ],
+            providers: [
+                search_service_1.SearchService
             ],
             bootstrap: [
                 application_component_1.ApplicationComponent

@@ -18,18 +18,15 @@ var CharacterInfoComponent = (function () {
         this.http = http;
     }
     CharacterInfoComponent.prototype.ngOnInit = function () {
-        // this.route.params
-        // .map(params => params['id'])
-        // .subscribe(id => { 
-        //   this.http.get(`/api/characters/${id}`).subscribe(result => this.character = result.json());
-        // });
+        // this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
+        // .map(response => response.json())
+        // .subscribe(result => this.character = result, error => console.log(error));
         var _this = this;
-        // this.route.params
-        // .switchMap(params => this.http.get(`/api/characters/${params['id']}`), 
-        // error => console.log(error));
-        this.http.get("/api/characters/" + this.route.snapshot.params['id'])
-            .map(function (response) { return response.json(); })
-            .subscribe(function (result) { return _this.character = result; }, function (error) { return console.log(error); });
+        this.route.params.subscribe(function (params) {
+            return _this.http.get("/api/characters/" + params['id'])
+                .map(function (response) { return response.json(); })
+                .subscribe(function (result) { return _this.character = result; }, function (error) { return console.log(error); });
+        });
     };
     CharacterInfoComponent = __decorate([
         core_1.Component({

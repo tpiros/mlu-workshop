@@ -10,24 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var search_service_1 = require('./../../services/search/search-service');
-require('rxjs/add/operator/map');
-var SearchComponent = (function () {
-    function SearchComponent(searchService) {
+var SearchResultComponent = (function () {
+    function SearchResultComponent(searchService) {
         this.searchService = searchService;
     }
-    SearchComponent.prototype.search = function () {
+    SearchResultComponent.prototype.ngOnChanges = function () {
         var _this = this;
-        this.searchService.search(this.term).subscribe(function (response) { return _this.searchService.results = response; });
+        this.searchService.currentSearch.subscribe(function (results) {
+            _this.query = _this.searchService.query;
+            console.log(_this.query);
+            if (results.length === 0) {
+                return;
+            }
+            else {
+                return _this.results = results;
+            }
+        });
     };
-    SearchComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], SearchResultComponent.prototype, "results", void 0);
+    SearchResultComponent = __decorate([
         core_1.Component({
-            selector: 'sw-search',
-            styleUrls: ['./app/components/search/search.css'],
-            templateUrl: '/app/components/search/search.html'
+            selector: 'sw-search-result',
+            templateUrl: '/app/components/search/search-result.html'
         }), 
         __metadata('design:paramtypes', [search_service_1.SearchService])
-    ], SearchComponent);
-    return SearchComponent;
+    ], SearchResultComponent);
+    return SearchResultComponent;
 }());
-exports.SearchComponent = SearchComponent;
-//# sourceMappingURL=search.component.js.map
+exports.SearchResultComponent = SearchResultComponent;
+//# sourceMappingURL=search-result.component.js.map

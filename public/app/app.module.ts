@@ -11,9 +11,13 @@ import { WelcomePageComponent } from  './components/welcome-page/welcome-page.co
 import { FacetComponent } from './components/facet/facet-component';
 import { NavigationComponent } from  './components/navigation/navigation.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchResultComponent } from './components/search/search-result.component';
 
 // Pipes
 import { TrimPipe } from './pipes/text-trim/text-trim.pipe'
+
+// Services
+import { SearchService } from './services/search/search-service';
 
 // Routing
 import { routing } from './app.routing';
@@ -33,7 +37,11 @@ import { routing } from './app.routing';
     FacetComponent,
     NavigationComponent,
     TrimPipe,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent
+  ],
+  providers: [
+    SearchService
   ],
   bootstrap: [
     ApplicationComponent
