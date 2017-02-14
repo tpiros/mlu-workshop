@@ -9,9 +9,11 @@ import 'rxjs/add/operator/map';
 })
 
 export class SearchComponent {
-  term: string; 
+  term: string;
+
   constructor(private searchService: SearchService) { }
-  search() {
+
+  search(): void {
     this.searchService.search(this.term).subscribe(response => this.searchService.results = response);
   }
 }

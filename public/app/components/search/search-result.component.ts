@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { SearchService } from './../../services/search/search-service';
 
 @Component({
@@ -7,8 +7,10 @@ import { SearchService } from './../../services/search/search-service';
 })
 
 export class SearchResultComponent implements OnChanges {
-  @Input() results: any;
+  @Input() results: Array<Object>;
+  
   query: string;
+  
   constructor(private searchService: SearchService) { }
 
   ngOnChanges() {

@@ -10,7 +10,7 @@ declare var $:JQueryStatic;
 export class ApplicationComponent implements AfterViewInit {
   results: Array<string> = [];
   
-  
+  // only required for off-canvas navigation toggle
   ngAfterViewInit() {
     $('#offcanvas').click(function () {
       $('.row-offcanvas').toggleClass('active');

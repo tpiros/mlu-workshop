@@ -6,13 +6,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'character-list',
   styleUrls: ['app/components/character-list/character-list.css'],
   templateUrl: '/app/components/character-list/character-list.html'
 })
 
 export class CharacterListComponent implements OnInit {
-  characters: Array<string>;
+  characters: Array<Object>;
   
   constructor(private http: Http, private route: ActivatedRoute) { }
 
