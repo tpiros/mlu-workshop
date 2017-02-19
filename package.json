@@ -42,7 +42,7 @@
     "start": "concurrently \"node app.js\" \"npm run tsc\"",
     "startDev": "concurrently \"npm run nodemon\" \"npm run tsc:w\"",
     "setup": "node setup/setup.js",
-    "lint": "gulp",
+    "lint": "./node_modules/.bin/gulp",
     "nodemon": "nodemon app.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w"

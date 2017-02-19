@@ -13,5 +13,5 @@ gulp.task('tslint', () => gulp.src(['public/app/**/*.ts'])
 );
 
 gulp.task('default', ['lintNode', 'tslint'], () => {
-  console.info('All lints successful');
+  console.info('Linting successful :-)');
 });
