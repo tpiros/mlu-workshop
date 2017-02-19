@@ -37,5 +37,10 @@ To start the application please execute `npm start`.
 
 To start the application in "development mode" you can execute `npm run startDev`. This will fire up both `nodemon` and `tsc -w` using the [concurrently](https://www.npmjs.com/package/concurrently) package. In this mode, code modifications to both Node.js and to Angular2 will automatically either resart the Node.js process and/or recompile the TypeScript code. (The changes will be visible once you have refreshed your browser.)
 
+### Linting
+ESLint and TSLint have been added to the project - `.eslintrc.json` contains the configuration for linting Node.js code, `tslint.json` contains the configuration for linting TypeScript code.
+
+To execute both of these linters you can run `npm run lint`. (This will execute the two gulp tasks).
+
 #### Disclaimer
 The data used to build this application is for non-commercial use in accordance with the Terms of Use from its originating source(s): [http://www.starwars.com/databank](http://www.starwars.com/databank) and [http://starwars.wikia.com/wiki/Main_Page](http://starwars.wikia.com/wiki/Main_Page).
