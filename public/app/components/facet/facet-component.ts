@@ -7,12 +7,12 @@ import { Http } from '@angular/http';
   templateUrl: '/app/components/facet/facet.html'
 })
 export class FacetComponent implements OnInit {
-  facets: Object;
+  public facets: Object;
   constructor(private http: Http) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.http.get('/api/characters')
     .map(response => response.json())
-    .subscribe(result => this.facets = result.facets, error => console.log(error));
+    .subscribe(result => this.facets = result.facets, error => console.error(error));
   }
 }

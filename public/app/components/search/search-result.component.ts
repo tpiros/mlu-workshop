@@ -7,13 +7,13 @@ import { SearchService } from './../../services/search/search-service';
 })
 
 export class SearchResultComponent implements OnChanges {
-  @Input() results: Array<Object>;
-  
-  query: string;
-  
+  @Input() public results: Object[];
+
+  public query: string;
+
   constructor(private searchService: SearchService) { }
 
-  ngOnChanges() {
+  public ngOnChanges() {
     this.searchService.currentSearch.subscribe(results => {
       this.query = this.searchService.query;
       if (results.length === 0) {
@@ -22,6 +22,5 @@ export class SearchResultComponent implements OnChanges {
         return this.results = results;
       }
     });
-    
   }
 }

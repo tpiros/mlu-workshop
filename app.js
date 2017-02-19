@@ -1,12 +1,11 @@
-'use strict';
 const express = require('express');
+const appRoutes = require('./routes/app-routes');
+const apiRoutes = require('./routes/api-routes');
+const path = require('path');
+
 const app = express();
 const appRouter = express.Router();
 const apiRouter = express.Router();
-const appRoutes = require('./routes/app-routes');
-const apiRoutes = require('./routes/api-routes');
-
-const path = require('path');
 
 app.set('port', 3000);
 app.set('json spaces', 2);
@@ -24,4 +23,4 @@ app.use('/', appRouter);
 appRouter.route('/image/:id').get(appRoutes.displayImage);
 appRouter.route('*').get(appRoutes.index);
 
-app.listen(app.get('port'), () => console.log(`Magic happens on port ${app.get('port')}`));
+app.listen(app.get('port'), () => console.info(`Magic happens on port ${app.get('port')}`));

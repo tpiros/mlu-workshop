@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -9,11 +9,11 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class CharacterInfoComponent implements OnInit {
-  character: Object;
+  public character: Object;
 
   constructor(private route: ActivatedRoute, private http: Http) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     // snapshot won't work in dynamic scenarios
     // this.http.get(`/api/characters/${this.route.snapshot.params['id']}`)
     // .map(response => response.json())
@@ -22,7 +22,7 @@ export class CharacterInfoComponent implements OnInit {
     this.route.params.subscribe(params => {
       return this.http.get(`/api/characters/${params['id']}`)
       .map(response => response.json())
-      .subscribe(result => this.character = result, error => console.log(error));
+      .subscribe(result => this.character = result, error => console.error(error));
     });
   }
 }

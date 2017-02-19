@@ -1,5 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
-declare var $:JQueryStatic;
+import { AfterViewInit, Component  } from '@angular/core';
+declare var $: JQueryStatic;
 
 @Component({
   selector: 'star-wars',
@@ -8,12 +8,10 @@ declare var $:JQueryStatic;
 })
 
 export class ApplicationComponent implements AfterViewInit {
-  results: Array<string> = [];
-  
+  public results: String[] = [];
+
   // only required for off-canvas navigation toggle
-  ngAfterViewInit() {
-    $('#offcanvas').click(function () {
-      $('.row-offcanvas').toggleClass('active');
-    });
+  public ngAfterViewInit() {
+    $('#offcanvas').click(() => $('.row-offcanvas').toggleClass('active'));
   }
 }

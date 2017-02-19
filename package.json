@@ -29,12 +29,20 @@
   "devDependencies": {
     "@types/node": "^6.0.46",
     "concurrently": "^3.1.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-tslint": "^7.1.0",
+    "tslint": "^4.4.2",
     "typescript": "~2.0.10"
   },
   "scripts": {
     "start": "concurrently \"node app.js\" \"npm run tsc\"",
     "startDev": "concurrently \"npm run nodemon\" \"npm run tsc:w\"",
     "setup": "node setup/setup.js",
+    "lint": "gulp",
     "nodemon": "nodemon app.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w"

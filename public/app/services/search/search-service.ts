@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class SearchService {
-  constructor(private http: Http) { }
-  
-  currentSearch:ReplaySubject<any> = new ReplaySubject(1);
-  params: URLSearchParams = new URLSearchParams();
-  results: Observable<ReplaySubject<any>>;
-  query: string;
+  public currentSearch: ReplaySubject<any> = new ReplaySubject(1);
+  public params: URLSearchParams = new URLSearchParams();
+  public results: Observable<ReplaySubject<any>>;
+  public query: string;
 
-  search(term: string): Observable<ReplaySubject<any>> {
+  constructor(private http: Http) { }
+
+  public search(term: string): Observable<ReplaySubject<any>> {
     this.query = term;
     this.params.set('term', term);
     return this.http.get('/api/search', { search: this.params }).map(response => {
