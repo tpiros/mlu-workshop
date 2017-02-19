@@ -6,10 +6,10 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/']"><i class="fa fa-home white" aria-hidden="true"></i> Home</a>
+        <a class="nav-link" [routerLink]="['/']"><i class="fa fa-home" [ngClass]="{'white': routerLinkActive}" aria-hidden="true"></i> Home</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/characters']"><i class="fa fa-user white" aria-hidden="true"></i> Characters</a>
+        <a class="nav-link" [routerLink]="['/characters']"><i class="fa fa-user" [ngClass]="{'white': routerLinkActive}" aria-hidden="true"></i> Characters</a>
       </li>
     </ul>
     <sw-search></sw-search>
