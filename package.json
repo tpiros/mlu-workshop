@@ -21,6 +21,7 @@
     "express": "^4.14.1",
     "font-awesome": "^4.7.0",
     "marklogic": "^1.0.6",
+    "nodemon": "^1.11.0",
     "request": "^2.79.0",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
@@ -43,7 +44,7 @@
     "startDev": "concurrently \"npm run nodemon\" \"npm run tsc:w\"",
     "setup": "node setup/setup.js",
     "lint": "./node_modules/.bin/gulp",
-    "nodemon": "nodemon app.js",
+    "nodemon": "./node_modules/.bin/nodemon app.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
