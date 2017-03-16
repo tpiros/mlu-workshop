@@ -1,4 +1,4 @@
-#MarkLogic University Workshop
+# MarkLogic University Workshop
 
 This repository is a full scaled three tiered application using MarkLogic, Angular2 (with TypeScript and SystemJS) and Node.js (ES2015).
 
