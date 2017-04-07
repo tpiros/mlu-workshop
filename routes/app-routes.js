@@ -5,7 +5,7 @@ const settings = require('../settings/settings');
 const db = marklogic.createDatabaseClient(settings);
 
 const index = ((req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'dist', 'index.html'));
 });
 
 const displayImage = ((req, res) => {

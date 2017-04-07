@@ -10,7 +10,7 @@ const apiRouter = express.Router();
 app.set('port', 3000);
 app.set('json spaces', 2);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'dist')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/api', apiRouter);

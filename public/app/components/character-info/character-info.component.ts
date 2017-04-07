@@ -4,12 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  templateUrl: '/app/components/character-info/character-info.html',
-  styleUrls: ['./app/components/character-info/character-info.css']
+  templateUrl: './character-info.html',
+  styleUrls: ['./character-info.css']
 })
 
 export class CharacterInfoComponent implements OnInit {
-  public character: Object;
+  public character: object;
 
   constructor(private route: ActivatedRoute, private http: Http) { }
 

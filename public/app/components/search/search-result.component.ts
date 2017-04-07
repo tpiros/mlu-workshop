@@ -3,11 +3,11 @@ import { SearchService } from './../../services/search/search-service';
 
 @Component({
   selector: 'sw-search-result',
-  templateUrl: '/app/components/search/search-result.html'
+  templateUrl: './search-result.html'
 })
 
 export class SearchResultComponent implements OnChanges {
-  @Input() public results: Object[];
+  @Input() public results: object[];
 
   public query: string;
 

@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'sw-search',
-  styleUrls: ['./app/components/search/search.css'],
-  templateUrl: '/app/components/search/search.html'
+  styleUrls: ['./search.css'],
+  templateUrl: './search.html'
 })
 
 export class SearchComponent {
