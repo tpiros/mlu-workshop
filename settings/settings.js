@@ -1,5 +1,5 @@
 module.exports = {
-  host: '192.168.56.200',
+  host: 'localhost',
   port: 8000,
   restPort: 8002,
   user: 'admin',
