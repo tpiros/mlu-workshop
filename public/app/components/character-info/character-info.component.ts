@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -9,9 +10,9 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class CharacterInfoComponent implements OnInit {
-  public character: Object;
+  public character: object;
 
-  constructor(private route: ActivatedRoute, private http: Http) { }
+  constructor(private route: ActivatedRoute, private http: Http, private router: Router) { }
 
   public ngOnInit() {
     // snapshot won't work in dynamic scenarios
@@ -23,6 +24,10 @@ export class CharacterInfoComponent implements OnInit {
       return this.http.get(`/api/characters/${params['id']}`)
       .map(response => response.json())
       .subscribe(result => this.character = result, error => console.error(error));
+    });
+
+    this.router.events.subscribe(() => {
+      window.scrollTo(0, 0);
     });
   }
 }
