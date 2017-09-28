@@ -3,8 +3,17 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
+/* Show it's not fixed to the top */
 body {
-  padding-top: 4.5rem;
+  min-height: 75rem;
+}
+
+.container {
+  margin-top: 5px;
+}
+
+.card {
+  padding: 5px;
 }
 
 /*
